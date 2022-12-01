@@ -64,7 +64,9 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-phones:build:production"
+              "browserTarget": "angular-phones:build:production",
+              "proxyConfig": "src/proxy.conf.json"
+
             },
             "development": {
               "browserTarget": "angular-phones:build:development"
@@ -97,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "4316879b-e8f8-4be4-aed3-190fc89c378a"
   }
 }

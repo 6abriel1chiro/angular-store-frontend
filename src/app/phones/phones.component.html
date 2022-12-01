@@ -1,0 +1,26 @@
+<p>phones works!</p>
+
+
+
+<div>
+    <label for="new-phone">Phone brand</label>
+    <input id="new-phone" #phoneBrand>
+    <label for="new-phone">Phone model</label>
+    <input id="new-phone" #phoneModel>
+    <label for="new-phone">storage</label>
+    <input id="new-phone" #phoneStorage>
+    <label for="new-phone">ram</label>
+    <input id="new-phone" #phoneRam>
+    <button type="button" class="add-button" (click)="add(phoneBrand.value,phoneModel.value,phoneStorage.value,phoneRam.value); phoneBrand.value='';phoneModel.value='';phoneStorage.value='';phoneRam.value=''">
+      Add Phone
+    </button>
+  </div>
+  <ul class="vegetales">
+    <li *ngFor="let phone of phones">
+      <a routerLink="/detail/{{phone.id}}">
+        <span class="badge">{{phone.marca}}</span> {{phone.modelo}}
+      </a>
+      <button type="button" class="delete" title="delete veg"
+        (click)="delete(phone)">x</button>
+    </li>
+  </ul>

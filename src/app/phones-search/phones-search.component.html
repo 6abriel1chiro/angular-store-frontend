@@ -1,0 +1,14 @@
+<p>phones-search works!</p>
+
+<div id="search-component">
+    <label for="search-box">Search</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  
+    <ul class="search-result">
+      <li *ngFor="let ph of phones$ | async" >
+        <a routerLink="/detail/{{ph.id}}">
+          {{ph.modelo}}
+        </a>
+      </li>
+    </ul>
+  </div>
