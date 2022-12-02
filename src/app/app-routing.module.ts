@@ -7,11 +7,13 @@ import { PhonesDetailComponent } from './phones-detail/phones-detail.component';
 import { PhonesSearchComponent } from './phones-search/phones-search.component';
 import { CustomErrorComponent } from './custom-error/custom-error.component';
 import {HomeComponent} from "./home/home.component"
+import { UserGuardGuard } from './user-guard.guard';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'phones',component: PhonesComponent},
+  {path: 'phones',component: PhonesComponent,
+  canActivate: [UserGuardGuard]},
   {path: 'detail/:id', component: PhonesDetailComponent},
   {path: 'search', component: PhonesSearchComponent},
   {path: 'login', component: LoginComponent},
