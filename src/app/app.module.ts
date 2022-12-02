@@ -10,7 +10,8 @@ import { PhonesSearchComponent } from './phones-search/phones-search.component';
 import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CustomErrorComponent } from './custom-error/custom-error.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component'
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HomeComponent } from './home/home.component'
     PhonesSearchComponent,
     LoginComponent,
     CustomErrorComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
