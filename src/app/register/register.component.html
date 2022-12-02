@@ -16,12 +16,20 @@
       required="required"
     />
     <input
-      type="password"
-      [(ngModel)]="confirmPassword"
-      name="password"
-      placeholder="Repeat the password"
+      type="text"
+      [(ngModel)]="name"
+      name="name"
+      placeholder="name"
       required="required"
     />
+
+    <input
+    type="text"
+    [(ngModel)]="userPermissions"
+    name="permission"
+    placeholder="permission"
+    required="required"
+  />
     <button type="submit" (click)="register()">Register</button>
   </form>
 </div>
