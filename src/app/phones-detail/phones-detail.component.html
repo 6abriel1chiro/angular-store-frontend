@@ -4,9 +4,15 @@
     <div><span>marca: </span>{{phone.marca}}</div>
     <div><span>modelo: </span>{{phone.modelo}}</div>
     <div><span>almacenamiento: </span>{{phone.gbalmacenamiento}}</div>
-    <div><span>core: </span> muestra el core del phone</div>
-    <div><span>accesorio: </span> muestra el accesorio del phone</div>
-
-
+    <div><span>core: </span>{{phone.core.Nombre}}</div>
+    <h3>Accessories</h3>
+    <ul *ngFor="let acc of phone.accessories">
+      <div class="accContainer">
+      <li>{{acc.accessory_name}}</li>
+      </div>
+    </ul>
+    <div></div>
     <button type="button" (click)="goBack()">Volver</button>
-  </div>
+    <button type="button" routerLink="/editphone/{{phone.id}}">Editar</button>
+
+</div>

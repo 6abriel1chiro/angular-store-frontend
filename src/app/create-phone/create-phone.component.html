@@ -1,25 +1,23 @@
+<div class="formDiv" *ngIf="phone">
+  <label for="marca">marca Name: </label>
+  <input id="marca" class="formInput" [(ngModel)]="phone.marca" placeholder="marca">
+  <label for="Modelo">Modelo Name: </label>
+  <input id="Modelo"   class="formInput" [(ngModel)]="phone.modelo" placeholder="Modelo">
+  <label for="Gbalmacenamiento">Gbalmacenamiento: </label>
+  <input id="Gbalmacenamiento" class="formInput" [(ngModel)]="phone.gbalmacenamiento" placeholder="Gbalmacenamiento">
+  <label for="Gbram">Gbram Number: </label>
+  <input id="Gbram"  class="formInput" [(ngModel)]="phone.gbram" placeholder="Gbram">
+  <label for="Core_id">Core_id Number: </label>
+  <input id="Core_id"  class="formInput" [(ngModel)]="phone.core_id" placeholder="Core_id">
+  <label for="Accessory_ids">Accessory_ids Name: </label>
+  <input id="Accessory_ids"  class="formInput" [(ngModel)]="accessory_ids_input" placeholder="Accessory_ids">
+</div>
 
-<div>
-    <label for="new-phone">Phone brand</label>
-    <input id="new-phone" #phoneBrand>
-    <label for="new-phone">Phone model</label>
-    <input id="new-phone" #phoneModel>
-    <label for="new-phone">storage</label>
-    <input id="new-phone" #phoneStorage>
-    <label for="new-phone">ram</label>
-    <input id="new-phone" #phoneRam>
-
-    <label for="new-phone">SoC</label>
-    <input id="new-phone" #phoneCoreId>
-
-    <label for="new-phone">accessory</label>
-    <input id="new-phone" #phoneAccessoryId>
-
-    <button type="button" class="add-button" (click)="add(phoneBrand.value,phoneModel.value,phoneStorage.value,phoneRam.value); phoneBrand.value='';phoneModel.value='';phoneStorage.value='';phoneRam.value=''">
-      Add Phone
-    </button>
+<div class="ButtonsContainer">
+  <button type="button"  class="add-button" (click)="add()">save</button>
+  <button type="button" class="delete-button" (click)="goBack()">go back</button>
   </div>
-<h2>manage phones</h2>
+<!---<h2>manage phones</h2>
   <ul class="phones">
     <li *ngFor="let phone of phones">
       <a routerLink="/detail/{{phone.id}}">
@@ -28,4 +26,4 @@
       <button type="button" class="delete" title="delete"
         (click)="delete(phone)">x</button>
     </li>
-  </ul>
+  </ul>--->

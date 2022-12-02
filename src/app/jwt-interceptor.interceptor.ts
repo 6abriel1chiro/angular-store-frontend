@@ -18,6 +18,7 @@ export class JwtInterceptorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
     const token: string = this.cookieService.get('token');
+    console.log(token)
     let req = request;
     if (token) {
       req = request.clone({
@@ -25,6 +26,7 @@ export class JwtInterceptorInterceptor implements HttpInterceptor {
           authorization: `Bearer ${token}`
         }
       });
+      console.log(req)
     }
 
 

@@ -1,0 +1,22 @@
+<h1>Updating Phone</h1>
+
+<div class="formDiv" *ngIf="phoneToUpdate">
+    <label for="marca">marca Name: </label>
+    <input id="marca" class="formInput" [(ngModel)]="phoneToUpdate.marca" placeholder="marca">
+    <label for="Modelo">Modelo Name: </label>
+    <input id="Modelo"   class="formInput" [(ngModel)]="phoneToUpdate.modelo" placeholder="Modelo">
+    <label for="Gbalmacenamiento">Gbalmacenamiento: </label>
+    <input id="Gbalmacenamiento" class="formInput" [(ngModel)]="phoneToUpdate.gbalmacenamiento" placeholder="Gbalmacenamiento">
+    <label for="Gbram">Gbram Number: </label>
+    <input id="Gbram"  class="formInput" [(ngModel)]="phoneToUpdate.gbram" placeholder="Gbram">
+    <label for="Core_id">Core_id Number: </label>
+    <input id="Core_id"  class="formInput" [(ngModel)]="phoneToUpdate.core_id" placeholder="Core_id">
+    <label for="Accessory_ids">Accessory_ids Name: </label>
+    <input id="Accessory_ids"  class="formInput" [(ngModel)]="accessory_ids_input" placeholder="Accessory_ids">
+  </div>
+
+<div class="ButtonsContainer">
+<button type="button" class="add-button" (click)="save()">save</button>
+<button type="button" class="deleteCoreButton" (click)="deleteCore()">Delete Phone</button>
+<button type="button" class="delete-button" (click)="goBack()">go back</button>
+</div>

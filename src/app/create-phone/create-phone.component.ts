@@ -1,43 +1,42 @@
 import { Component, OnInit } from '@angular/core';
 import { Phone } from '../Phone';
 import { PhonesService } from '../services/phones.service';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-create-phone',
   templateUrl: './create-phone.component.html',
   styleUrls: ['./create-phone.component.css']
 })
 export class CreatePhoneComponent implements OnInit {
-  phones: Phone[] = [];
+  phone:Phone={
+    marca: '',
+    modelo: '',
+    gbalmacenamiento: 0,
+    gbram: 0,
+    core_id:0,
+    accessory_ids: []
+}
+accessory_ids_input = ""
 
-
-  constructor(private phonesService:PhonesService) { }
+  constructor(private phonesService:PhonesService, private route: ActivatedRoute,private location: Location) { }
 
   ngOnInit(): void {
 
-    this.getPhones();
-  }
-  getPhones():void{
-    this.phonesService.getPhones()
-    .subscribe(phones => this.phones = phones);
   }
 
-  add(marca:string,modelo:string,gbalmacenamiento:string,gbram: string): void{
-    let phone= {} as Phone;
-    phone.marca=marca.trim();
-    phone.modelo=modelo.trim();
-    phone.gbalmacenamiento= +(gbalmacenamiento).trim();
-    phone.gbram= +(gbram).trim();
-    let mod =phone.modelo.trim();
-    if(!mod){return}
-    this.phonesService.addPhone(phone)
-      .subscribe(veg => {
-        this.phones.push(veg);
-    });
-  }
-  delete(phone: Phone): void{
-    this.phones = this.phones.filter(p => p !== phone);
-    this.phonesService.deletePhone(phone.id).subscribe();
+  add(): void{
+    let accessories_str = this.accessory_ids_input.split(", ")
+    this.phone.accessory_ids=[]
+    for(let i = 0; i<accessories_str.length; i++)
+    {
+      this.phone.accessory_ids.push(parseInt(accessories_str[i])) 
+    }
+     this.phonesService.addPhone(this.phone).subscribe(()=>{alert("done")});
   }
 
+  goBack(): void {
+    this.location.back();
+  }
 
 }

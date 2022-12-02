@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhonesComponent } from './phones/phones.component';
 import { PhonesDetailComponent } from './phones-detail/phones-detail.component';
-import { PhonesSearchComponent } from './phones-search/phones-search.component';
 import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CustomErrorComponent } from './custom-error/custom-error.component';
@@ -21,6 +20,8 @@ import { AccessoriesListComponent } from './accessories-list/accessories-list.co
 import { CreateAccessoryComponent } from './create-accessory/create-accessory.component';
 import { UpdateAccessoryComponent } from './update-accessory/update-accessory.component';
 import { AccessoriesFormComponent } from './accessories-form/accessories-form.component'
+import { JwtInterceptorInterceptor } from './jwt-interceptor.interceptor';
+import { UpdatePhoneComponent } from './update-phone/update-phone.component';
 
 
 @NgModule({
@@ -28,7 +29,6 @@ import { AccessoriesFormComponent } from './accessories-form/accessories-form.co
     AppComponent,
     PhonesComponent,
     PhonesDetailComponent,
-    PhonesSearchComponent,
     LoginComponent,
     CustomErrorComponent,
     HomeComponent,
@@ -41,7 +41,8 @@ import { AccessoriesFormComponent } from './accessories-form/accessories-form.co
     AccessoriesListComponent,
     CreateAccessoryComponent,
     UpdateAccessoryComponent,
-    AccessoriesFormComponent
+    AccessoriesFormComponent,
+    UpdatePhoneComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +50,11 @@ import { AccessoriesFormComponent } from './accessories-form/accessories-form.co
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptorInterceptor,
+    multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

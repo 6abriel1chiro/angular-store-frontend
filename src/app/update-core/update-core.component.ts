@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-update-core',
   templateUrl: './update-core.component.html',
-  styleUrls: ['./update-core.component.scss']
+  styleUrls: ['./update-core.component.css']
 })
 export class UpdateCoreComponent implements OnInit {
   @Input() coreToUpdate?:Core

@@ -7,7 +7,7 @@ import {Observable, of} from 'rxjs'
 })
 export class PhonesService {
 
-  private phoneUrl = 'http://localhost:3000/phones';
+  private phoneUrl = '/api/phones';
 
   constructor(private httpClient:HttpClient) { }
 
@@ -21,14 +21,18 @@ export class PhonesService {
 
     addPhone(phone: Phone): Observable<Phone>
     {
+      console.log(phone);
+      
       return this.httpClient.post<Phone>(this.phoneUrl,phone);
     }
     deletePhone(id: number): Observable<Phone>{
       const url = `${this.phoneUrl}/${id}`;
       return this.httpClient.delete<Phone>(url);
     }
+
+
     updatePhone(Phone: Phone): Observable<any>{
-      return this.httpClient.put(this.phoneUrl,Phone);
+      return this.httpClient.patch(this.phoneUrl+"/"+Phone.id,Phone);
     }
     searchPhonees(term:string): Observable<Phone[]>{
       if(!term.trim()){

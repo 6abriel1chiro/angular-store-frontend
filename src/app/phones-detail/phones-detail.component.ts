@@ -10,7 +10,7 @@ import { PhonesService } from '../services/phones.service';
 })
 export class PhonesDetailComponent implements OnInit {
 
-  phone: Phone | undefined;
+  phone?: Phone;
   constructor(
     private route: ActivatedRoute,
     private phonesService: PhonesService,
@@ -31,4 +31,7 @@ export class PhonesDetailComponent implements OnInit {
     this.location.back();
   }
 
+  goEdit():void{
+    this.location.back();
+  }
 }

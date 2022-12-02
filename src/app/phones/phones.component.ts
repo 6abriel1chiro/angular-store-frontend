@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Phone } from '../Phone';
 import { PhonesService } from '../services/phones.service';
 
+
 @Component({
   selector: 'app-phones',
   templateUrl: './phones.component.html',
@@ -21,6 +22,9 @@ export class PhonesComponent implements OnInit {
     this.phonesService.getPhones()
     .subscribe(phones => this.phones = phones);
   }
+
+
+  
 
 
 

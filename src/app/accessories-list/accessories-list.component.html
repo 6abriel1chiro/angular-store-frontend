@@ -1,17 +1,20 @@
 <h1>Accessories List</h1>
 <div class="accList">
-  <li *ngFor="let acc of accList">
+  <ul *ngFor="let acc of accList">
     <div class="accContainer">
       
-    <a routerLink="/editacc/{{acc.id}}">
+    <li><button type="button" routerLink="/editacc/{{acc.id}}">
       {{acc.accessory_name}}
-    </a>
+    </button></li>
     
   </div>
-  </li>
+</ul>
 </div>
 
 <button class="add-button" routerLink="/createacc">
   Create Accessory
 </button>
+
+<button type="button" routerLink="">goBack</button>
+
 

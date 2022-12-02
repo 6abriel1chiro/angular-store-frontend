@@ -12,21 +12,21 @@ export class CoreService {
   }
   
   getCores():Observable<Core[]>{
-    return this.http.get<Core[]>('/cores');
+    return this.http.get<Core[]>('/api/cores');
   }
   getCorebyID(id:number):Observable<Core>{
-    return this.http.get<Core>('/cores/'+id);
+    return this.http.get<Core>('/api/cores/'+id);
   }
   updateCore(modifiedCore:Core):Observable<Core>{
-    return this.http.patch<Core>('/cores/'+modifiedCore.id,modifiedCore);
+    return this.http.patch<Core>('/api/cores/'+modifiedCore.id,modifiedCore);
   }
   createCore(newCore:Core):Observable<Core>{
-    return this.http.post<Core>('/cores',newCore);
+    return this.http.post<Core>('/api/cores',newCore);
   }
   deleteCore(id:number):Observable<Core>{
-    return this.http.delete<Core>('/cores/'+id);
+    return this.http.delete<Core>('/api/cores/'+id);
   }
   deleteCoreUpdated(modifiedCore:Core):Observable<Core>{
-    return this.http.delete<Core>('/cores/'+modifiedCore.id);
+    return this.http.delete<Core>('/api/cores/'+modifiedCore.id);
   }
 }

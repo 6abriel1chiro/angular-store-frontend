@@ -13,21 +13,21 @@ export class AccessoryService {
    }
 
    getAccessorys():Observable<Accessory[]>{
-    return this.http.get<Accessory[]>('/accessory');
+    return this.http.get<Accessory[]>('/api/accessories');
   }
   getAccessorybyID(id:number):Observable<Accessory>{
-    return this.http.get<Accessory>('/accessory/'+id);
+    return this.http.get<Accessory>('/api/accessories/'+id);
   }
   updateAccessory(modifiedAccessory:Accessory):Observable<Accessory>{
-    return this.http.patch<Accessory>('/accessory/'+modifiedAccessory.id,modifiedAccessory);
+    return this.http.patch<Accessory>('/api/accessories/'+modifiedAccessory.id,modifiedAccessory);
   }
   createAccessory(newAccessory:Accessory):Observable<Accessory>{
-    return this.http.post<Accessory>('/accessory',newAccessory);
+    return this.http.post<Accessory>('/api/accessories',newAccessory);
   }
   deleteAccessory(id:number):Observable<Accessory>{
-    return this.http.delete<Accessory>('/accessory/'+id);
+    return this.http.delete<Accessory>('/api/accessories/'+id);
   }
   deleteAccessoryUpdated(modifiedAccessory:Accessory):Observable<Accessory>{
-    return this.http.delete<Accessory>('/accessory/'+modifiedAccessory.id);
+    return this.http.delete<Accessory>('/api/accessories/'+modifiedAccessory.id);
   }
 }
