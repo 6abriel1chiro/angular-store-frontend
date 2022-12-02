@@ -1,10 +1,10 @@
-  <ul class="phones">
-    <li *ngFor="let phone of phones">
-      <a routerLink="/detail/{{phone.id}}">
-        <span class="badge">{{phone.marca}}</span> {{phone.modelo}}
-      </a>
-    </li>
+  <h2>Phones</h2>
+  <ul class="phones" *ngFor="let phone of phones">
+
+      <li><button type="button" routerLink="/detail/{{phone.id}}">
+
+        {{phone.modelo}}
+      </button></li>
   </ul>
   <button type="button" routerLink="/createphone">Create</button>
   <button type="button" routerLink="">Back</button>
-

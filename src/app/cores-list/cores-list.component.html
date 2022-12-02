@@ -3,9 +3,9 @@
   <ul *ngFor="let core of coresList">
     <div class="coreContainer">
       
-    <li><a routerLink="/editcore/{{core.id}}">
+    <li><button type="button" routerLink="/editcore/{{core.id}}">
       {{core.Nombre}}
-    </a></li>
+    </button></li>
     
   </div>
 </ul>
