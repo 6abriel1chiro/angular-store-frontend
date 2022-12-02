@@ -1,0 +1,50 @@
+.coresList {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+  }
+.coreContainer{
+    display: flex;
+}
+  
+  .coresList li {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .coresList li:hover {
+    left: .1em;
+  }
+  
+  .coresList a {
+    color: #333;
+    text-decoration: none;
+    background-color: #EEE;
+    margin: .5em;
+    height: 1.6em;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+  }
+  
+  .coresList a:hover {
+    color: #42545C;
+    background-color: #e6e6e6;
+  }
+  
+  .coresList a:active {
+    background-color: #525252;
+    color: #fafafa;
+  }
+  
+  .add-button {
+   padding: .5rem 1.5rem;
+   font-size: 1rem;
+   margin-bottom: 2rem;
+  }
+  
+  .add-button:hover {
+    color: white;
+    background-color: #42545C;
+  }
