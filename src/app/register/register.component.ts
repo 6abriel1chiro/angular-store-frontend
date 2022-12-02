@@ -1,6 +1,8 @@
-import { outputAst } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users/users.service';
+import { registerUserDto } from '../dto/registerUser.dto';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

@@ -14,6 +14,9 @@ export class UsersService {
 
 
   register(name:string,email:string , password: string, userPermissions:string): Observable<any> {
-    return this.http.post("https://localhost:3000/auth/register", {Name:name, Email:email, Password:password, UserPermissons:userPermissions });
+    return this.http.post("/api/auth/register", {Name:name, Email:email, Password:password, UserPermissons:userPermissions });
+  }
+  login(email:string , password: string): Observable<any> {
+    return this.http.post("/api/auth/login", {Email:email, Password:password });
   }
 }
