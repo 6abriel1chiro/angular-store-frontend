@@ -1,0 +1,17 @@
+<div class="formDiv" *ngIf="currentCore">
+    <label for="name">Core Name: </label>
+    <input id="name" class="formInput" [(ngModel)]="currentCore.Nombre" placeholder="name">
+
+    <label for="Brand">Brand Name: </label>
+    <input id="Brand"   class="formInput" [(ngModel)]="currentCore.Marca" placeholder="Brand">
+    <label for="Frequency">Frequency on Mhz: </label>
+    <input id="Frequency" class="formInput" [(ngModel)]="currentCore.FrecuenciaMhz" placeholder="Frequency">
+    <label for="Cores">Cores Number: </label>
+    <input id="Cores"  class="formInput" [(ngModel)]="currentCore.Nucleos" placeholder="Cores">
+    <label for="Threads">Threads Number: </label>
+    <input id="Threads"  class="formInput" [(ngModel)]="currentCore.Hilos" placeholder="Threads">
+    <label for="Socket">Socket Name: </label>
+    <input id="Socket"  class="formInput" [(ngModel)]="currentCore.Zocalo" placeholder="Socket">
+    <label for="Cache">Cache: </label>
+    <input id="Cache"  class="formInput" [(ngModel)]="currentCore.Cache" placeholder="Cache">
+</div>

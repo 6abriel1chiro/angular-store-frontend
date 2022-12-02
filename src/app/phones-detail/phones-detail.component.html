@@ -1,13 +1,12 @@
-<p>phones-detail works!</p>
 <div *ngIf="phone">
     <h2>{{phone.modelo | uppercase}} Detalles</h2>
     <div><span>Id: </span>{{phone.id}}</div>
     <div><span>marca: </span>{{phone.marca}}</div>
     <div><span>modelo: </span>{{phone.modelo}}</div>
     <div><span>almacenamiento: </span>{{phone.gbalmacenamiento}}</div>
-    <div>
-      <label for="phone-model">phone : </label>
-      <input id="phone-model" [(ngModel)]="phone.modelo" placeholder="phone"/>
-    </div>
+    <div><span>core: </span> muestra el core del phone</div>
+    <div><span>accesorio: </span> muestra el accesorio del phone</div>
+
+
     <button type="button" (click)="goBack()">Volver</button>
   </div>

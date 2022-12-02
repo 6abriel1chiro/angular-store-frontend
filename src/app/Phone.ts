@@ -4,4 +4,6 @@ export interface Phone{
     modelo: string;
     gbalmacenamiento: number;
     gbram: number;
+    core_id:number;
+    accessory_ids:Array<number>;
   }

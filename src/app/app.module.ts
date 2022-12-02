@@ -11,7 +11,16 @@ import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CustomErrorComponent } from './custom-error/custom-error.component';
 import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component'
+import { RegisterComponent } from './register/register.component';
+import { CoresListComponent } from './cores-list/cores-list.component';
+import { CreateCoreComponent } from './create-core/create-core.component';
+import { UpdateCoreComponent } from './update-core/update-core.component';
+import { CoresFormComponent } from './cores-form/cores-form.component';
+import { CreatePhoneComponent } from './create-phone/create-phone.component';
+import { AccessoriesListComponent } from './accessories-list/accessories-list.component';
+import { CreateAccessoryComponent } from './create-accessory/create-accessory.component';
+import { UpdateAccessoryComponent } from './update-accessory/update-accessory.component';
+import { AccessoriesFormComponent } from './accessories-form/accessories-form.component'
 
 
 @NgModule({
@@ -23,7 +32,16 @@ import { RegisterComponent } from './register/register.component'
     LoginComponent,
     CustomErrorComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    CoresListComponent,
+    CreateCoreComponent,
+    UpdateCoreComponent,
+    CoresFormComponent,
+    CreatePhoneComponent,
+    AccessoriesListComponent,
+    CreateAccessoryComponent,
+    UpdateAccessoryComponent,
+    AccessoriesFormComponent
   ],
   imports: [
     BrowserModule,

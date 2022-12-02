@@ -1,0 +1,16 @@
+<h1>Cores List</h1>
+<div class="coresList">
+  <li *ngFor="let core of coresList">
+    <div class="coreContainer">
+      
+    <a routerLink="/editcore/{{core.id}}">
+      {{core.Nombre}}
+    </a>
+    
+  </div>
+  </li>
+</div>
+
+<button class="add-button" routerLink="/createcore">
+  Create Core
+</button>
