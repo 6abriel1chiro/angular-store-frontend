@@ -9,7 +9,6 @@ export class PhonesService {
 
   private phoneUrl = 'http://localhost:3000/phones';
 
-
   constructor(private httpClient:HttpClient) { }
 
   getPhones(): Observable<Phone[]>{

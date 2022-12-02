@@ -30,7 +30,7 @@ export class UpdateAccessoryComponent implements OnInit {
     if(this.accessoryToUpdate)
       this.coreService.updateAccessory(this.accessoryToUpdate).subscribe(()=>{alert("done")})
   }
-  deleteCore()
+  deleteAccessoryUpdated()
   {
     if(this.accessoryToUpdate)
     {
