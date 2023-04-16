@@ -23,6 +23,21 @@ export class LoginComponent implements OnInit {
 
   }
 
+  canonicalizeData(){
+    let loginData={email:this.email.toString().replace(/ /g,''),password:this.password.toString().replace(/ /g,'')}
+    return loginData
+  }
+  validateLoginData(loginData:any){
+    if (loginData.email==""){
+      this.errorMessage = "El campo de mail esta vacio";
+      return false
+    }
+    if (loginData.password==""){
+      this.errorMessage = "El campo de password esta vacio";
+      return false
+    }
+    return true
+  }
   login(): void {
     if (this.loginAttempts >= 4) {
       // Si ya se han hecho 4 intentos, mostrar mensaje de error y esperar 30 segundos antes de permitir otro intento
@@ -34,12 +49,13 @@ export class LoginComponent implements OnInit {
       }, 30000);
       return;
     }
-
-    this.userService.login(this.email, this.password).subscribe(
+    let loginData=this.canonicalizeData()
+    if (!this.validateLoginData(this.login)){return;}
+    this.userService.login(loginData.email, loginData.password).subscribe(
       (data) => {
         if (data.token) {
           // Save the token in a cookie with Secure and HttpOnly flags
-          this.CookieService.set('token', data.token, undefined, '/', undefined, true, 'Strict');
+          this.CookieService.set('token', data.token,  60*60*12 , '/', undefined, true, 'Strict');
           this.router.navigate(['']);
         } else {
           // Display error message if the server did not return a token
@@ -49,7 +65,7 @@ export class LoginComponent implements OnInit {
       },
       (error) => {
         // Display error message if there was an error during the authentication process
-        this.errorMessage = error.message;
+        this.errorMessage = "Authentication failed";
         this.loginAttempts++;
       }
     );
