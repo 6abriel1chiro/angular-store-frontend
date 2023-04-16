@@ -23,6 +23,9 @@
         placeholder="Password"
         required="required"
       />
+
+      <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+      
       <button type="submit" (click)="login()">Log in</button>
       <button type="submit" (click)="goRegister()">Register</button>
 
